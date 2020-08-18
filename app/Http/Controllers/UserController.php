@@ -25,7 +25,7 @@ class UserController extends Controller
      * @return \Illuminate\View\View
      */
     public function show(){
-        $users = User::all();
+        $users = User::latest()->paginate(5);
         return view ('users.show', compact('users'));
     }
 }
