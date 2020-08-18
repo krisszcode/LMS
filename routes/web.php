@@ -22,4 +22,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //list of all registered users. html href and CSS design needed.
-Route::get('/users', 'UserController@show')->name('showUsers');
+Route::get('/users', 'UserController@show')->name('users.show');
+
+Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
+Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
+Route::patch('/profile/{user}/edit','ProfileController@update');

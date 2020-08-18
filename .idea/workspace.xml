@@ -20,6 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1af8519c-011e-4a92-8f2c-c1e7497d22a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597662086353</updated>
       <workItem from="1597662087521" duration="5341000" />
-      <workItem from="1597744478751" duration="938000" />
+      <workItem from="1597744478751" duration="3245000" />
     </task>
     <servers />
   </component>
@@ -192,13 +195,13 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="903" y="371" key="NewPhpFileDialog" timestamp="1597744902786">
+    <state x="903" y="371" key="NewPhpFileDialog" timestamp="1597746666186">
       <screen x="0" y="23" width="1440" height="835" />
     </state>
-    <state x="903" y="371" key="NewPhpFileDialog/0.23.1440.835@0.23.1440.835" timestamp="1597744902786" />
-    <state x="745" y="182" width="670" height="676" key="search.everywhere.popup" timestamp="1597745381456">
+    <state x="903" y="371" key="NewPhpFileDialog/0.23.1440.835@0.23.1440.835" timestamp="1597746666186" />
+    <state x="745" y="182" width="670" height="676" key="search.everywhere.popup" timestamp="1597747390144">
       <screen x="0" y="23" width="1440" height="835" />
     </state>
-    <state x="745" y="182" width="670" height="676" key="search.everywhere.popup/0.23.1440.835@0.23.1440.835" timestamp="1597745381456" />
+    <state x="745" y="182" width="670" height="676" key="search.everywhere.popup/0.23.1440.835@0.23.1440.835" timestamp="1597747390144" />
   </component>
 </project>
