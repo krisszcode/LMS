@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use function Sodium\compare;
+
 
 
 class ProfileController extends Controller
@@ -15,11 +18,26 @@ class ProfileController extends Controller
 
     public function edit(User $user){
 
-        $user = User::findOrFail($user->id);
+        if (Gate::allows('ownProfile', $user)) {
 
-        if (Gate::denies('update', $user)) {
+            return view('profile.edit', compact('user'));
+        } else {
             abort(403);
         }
-        return view('profile.edit', compact('user'));
     }
+
+    public function update(Request $request){
+        $data = request()->validate([
+            'name' => 'required',
+            'roles' => ''
+        ]);
+
+        $user = User::find(Auth::user()->id);
+        $user->name = $data['name'];
+        $user->roles = $data['roles'];
+        $user->save();
+
+        return redirect("/profile/{$user->id}");
+    }
+
 }
