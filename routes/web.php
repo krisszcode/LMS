@@ -24,11 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 //list of all registered users. html href and CSS design needed.
 Route::get('/users', 'UserController@show')->name('users.show');
 
+Route::get('/curriculum/create','PageController@create')->name('curriculum.create');
+Route::post('/curriculum/','PageController@store');
 Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
 Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
-<<<<<<< Updated upstream
 Route::post('/profile/{user}/update','ProfileController@update');
-=======
 Route::patch('/profile/{user}/edit','ProfileController@update');
-Route::get('/curriculum/create','PageController@create')->name('curriculum.create');
->>>>>>> Stashed changes
