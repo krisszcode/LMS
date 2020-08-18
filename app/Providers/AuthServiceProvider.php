@@ -28,12 +28,12 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('mentor', function($user) {
-            return $user->role == 'mentor';
+            return $user->roles == 'mentor';
         });
 
         /* define a manager user role */
         Gate::define('student', function($user) {
-            return $user->role == 'student';
+            return $user->roles == 'student';
         });
 
         $authUser = Auth::user();
