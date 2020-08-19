@@ -19,14 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index', 'HomeController@index')->name('index');
 
 //list of all registered users. html href and CSS design needed.
 Route::get('/users', 'UserController@show')->name('users.show');
 
-Route::get('/curriculum/create','PageController@create')->name('curriculum.create');
-Route::post('/curriculum/','PageController@store');
 Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
 Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
 Route::post('/profile/{user}/update','ProfileController@update');
-Route::patch('/profile/{user}/update','ProfileController@update');
+Route::patch('/profile/{user}/edit','ProfileController@update');
