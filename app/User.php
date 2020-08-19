@@ -36,4 +36,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function assigment(){
+
+        return $this->belongsToMany(assigmentPage::class);
+    }
+
+    public function attendance(){
+        return $this->belongsToMany(Attendance::class);
+    }
+
+    public function submissions(){
+
+        return $this->hasMany(user_Submission_Score::class);
+    }
 }
