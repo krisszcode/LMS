@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -33,6 +35,11 @@ class AuthServiceProvider extends ServiceProvider
         /* define a manager user role */
         Gate::define('student', function($user) {
             return $user->roles == 'student';
+        });
+        $authUser = Auth::user();
+
+        Gate::define('ownProfile', function($authUser,$user) {
+            return $authUser->id == $user->id;
         });
     }
 
