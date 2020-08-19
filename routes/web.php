@@ -24,6 +24,7 @@ Route::get('/index', 'HomeController@index')->name('index');
 Route::get('/users', 'UserController@show')->name('users.show');
 
 Route::get('/curriculum/create','PageController@create')->name('curriculum.create');
+Route::get('curriculum/index', 'PageController@index') ->name('curriculum.index');
 Route::post('/curriculum','PageController@store');
 
 Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
