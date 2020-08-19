@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class assigmentPage extends Model
+class assignmentPage extends Model
 {
     public function assigment_users(){
 
