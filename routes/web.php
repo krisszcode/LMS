@@ -29,4 +29,4 @@ Route::post('/curriculum/','PageController@store');
 Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
 Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
 Route::post('/profile/{user}/update','ProfileController@update');
-Route::patch('/profile/{user}/edit','ProfileController@update');
+Route::patch('/profile/{user}/update','ProfileController@update');

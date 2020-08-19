@@ -34,7 +34,7 @@ class ProfileController extends Controller
             'roles' => ''
         ]);
 
-        $user = User::find(Auth::user()->id);
+        $user = auth()->user();
         $user->name = $data['name'];
         $user->roles = $data['roles'];
         $user->save();
