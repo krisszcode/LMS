@@ -20,7 +20,9 @@ class ProfileController extends Controller
 
         if (Gate::allows('ownProfile', $user)) {
 
-            return view('profile.edit', compact('user'));
+            $roles = ['mentor','student']; // contains the roles of the CC
+
+            return view('profile.edit', compact('user','roles'));
         } else {
             abort(403);
         }
