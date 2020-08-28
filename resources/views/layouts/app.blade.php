@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/scorepage.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -55,13 +56,47 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/index">
+
+                                        {{"Home" }}
+                                    </a>
                                     <a class="dropdown-item" href="/profile/{{Auth::user()->id}}">
 
                                         {{"Profile" }}
                                     </a>
+                                    <a class="dropdown-item" href="/users">
+
+                                        {{"Users" }}
+                                    </a>
+                                    @can('student')
+                                        <a class="dropdown-item" href="/{{Auth::user()->id}}/scores">
+
+                                            {{"My Scores" }}
+                                        </a>
+                                    @endcan
+                                    @can('mentor')
+                                        <a class="dropdown-item" href="/submissions">
+
+                                            {{"View student submissions" }}
+                                        </a>
+                                    @endcan
+                                    @can('mentor')
+                                    <a class="dropdown-item" href="/curriculum/create">
+
+                                        {{"Add a new text page to Curriculum" }}
+                                    </a>
+                                    <a class="dropdown-item" href="/assignment/create">
+
+                                        {{"Add a new assignment to Curriculum" }}
+                                    </a>
+                                    @endcan
                                     <a class="dropdown-item" href="/curriculum/index">
 
                                         {{"Curriculum" }}
+                                    </a>
+                                    <a class="dropdown-item" href="/assignment/index">
+
+                                        {{"Assignments" }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -36,13 +36,13 @@ class PageController extends Controller
                 'content' => ['required'],
             ]);
 
+            $textPage = new textPage();
+            $textPage->title = $data['title'];
+            $textPage->text_info = $data['content'];
+            $textPage->published = false;
+            $textPage->save();
 
-            auth()->user()->page()->create([
-                'title' => $data['title'],
-                'content' => $data['content'],
-            ]);
-
-            return redirect('/curriculum');
+            return redirect('/curriculum/index');
 
         } else {
             abort(403);
@@ -50,10 +50,29 @@ class PageController extends Controller
         }
     }
 
-    public function index(assignmentPage $assignment,textPage $textPage){
+    public function view($textpageID){
+        if (Gate::allows('mentor', auth()->user())) {
+        $textPage = textPage::find($textpageID);
 
+        return view('curriculum.view', compact('textPage'));
+        } else {
+            abort(403);
 
-        return view('curriculum.curriculumIndex');
+        }
+    }
+
+    public function edit($textpageID, Request $request){
+        $textPage = textPage::find($textpageID);
+        $textPage->published = $request["state"];
+        $textPage->save();
+
+        return redirect()->back()->with('message', 'Successfully changed!');
+    }
+
+    public function index(){
+        $textPages = textPage::all();
+
+        return view('curriculum.curriculumIndex', compact('textPages'));
     }
 
 }

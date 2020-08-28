@@ -41,6 +41,20 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('ownProfile', function($authUser,$user) {
             return $authUser->id == $user->id;
         });
+
+        Gate::define('submittedAlready', function($user,$vars){ //$assignment
+            //check if the user submitted an answer for an assignment
+            $authUser = auth()->user();
+
+            if (($authUser->id == $submission->user_id)
+                &&
+                ($submission->assignment_id == $assignment->id)){
+                return true;
+            }else{
+                return false;
+            }
+
+        });
     }
 
 }

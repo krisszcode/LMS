@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-8 offset-2">
                     <div class="row">
-                        <h1>Add New Curriculum Page</h1>
+                        <h1>Add New Curriculum Text Page</h1>
                     </div>
                     <div class="form-group row">
                         <label for="title" class="col-md-4 col-form-label"> Curriculum Title</label>

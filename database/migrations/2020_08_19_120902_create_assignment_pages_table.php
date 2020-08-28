@@ -18,7 +18,7 @@ class CreateAssignmentPagesTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('question');
-            $table->boolean('published');
+            $table->boolean('published')->nullable();
             $table->integer('max_score');
 
 

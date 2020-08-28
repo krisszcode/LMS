@@ -20,8 +20,10 @@ class CreateUserSubmissionScoresTable extends Migration
             $table->unsignedBigInteger('assignment_id');
             $table->integer('student_score')->nullable();
             $table->text('answer')->nullable();
+
+
             $table->index('user_id');
-            $table->index('assigment_id');
+            $table->index('assignment_id');
         });
     }
 

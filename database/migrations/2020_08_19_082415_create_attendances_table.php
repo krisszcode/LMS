@@ -18,6 +18,8 @@ class CreateAttendancesTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->date('date')->nullable();
+
+
             $table->index('user_id');
         });
     }
