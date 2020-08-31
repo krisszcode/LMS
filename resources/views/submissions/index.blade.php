@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
       @foreach($submissions as $submission)
         <div class="card pb-4 mb-4">
             <div class="card-body">
@@ -33,11 +38,6 @@
                             </button>
                         </div>
                     </div>
-                    @if(session()->has('message'))
-                        <div class="alert alert-success">
-                            {{ session()->get('message') }}
-                        </div>
-                    @endif
                 </form>
             </div>
         </div>

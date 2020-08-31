@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e107b62251edf95ed1cff5fb4bf6ea19",
+    "content-hash": "b14765168783cf777e8d77c41111dfcd",
     "packages": [
+        {
+            "name": "almasaeed2010/adminlte",
+            "version": "v3.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColorlibHQ/AdminLTE.git",
+                "reference": "6b8b69261f1aacbb4be037c934f3c3652e6dff27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ColorlibHQ/AdminLTE/zipball/6b8b69261f1aacbb4be037c934f3c3652e6dff27",
+                "reference": "6b8b69261f1aacbb4be037c934f3c3652e6dff27",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colorlib"
+                }
+            ],
+            "description": "AdminLTE - admin control panel and dashboard that's based on Bootstrap 4",
+            "homepage": "http://adminlte.io/",
+            "keywords": [
+                "JS",
+                "admin",
+                "back-end",
+                "css",
+                "less",
+                "responsive",
+                "template",
+                "theme",
+                "web"
+            ],
+            "time": "2020-05-19T20:41:11+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.1",
@@ -109,6 +148,100 @@
                 }
             ],
             "time": "2020-04-15T15:59:35+00:00"
+        },
+        {
+            "name": "chartisan/php",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Chartisan/PHP.git",
+                "reference": "078c417200657837057c5a76b01764b2d5ac00e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Chartisan/PHP/zipball/078c417200657837057c5a76b01764b2d5ac00e0",
+                "reference": "078c417200657837057c5a76b01764b2d5ac00e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Chartisan\\PHP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik Campobadal Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "Chartisan's PHP backend",
+            "time": "2020-02-10T09:22:27+00:00"
+        },
+        {
+            "name": "consoletvs/charts",
+            "version": "7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ConsoleTVs/Charts.git",
+                "reference": "d0e83642c274c5aab0a1c3ee92f47bceca1d9eee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ConsoleTVs/Charts/zipball/d0e83642c274c5aab0a1c3ee92f47bceca1d9eee",
+                "reference": "d0e83642c274c5aab0a1c3ee92f47bceca1d9eee",
+                "shasum": ""
+            },
+            "require": {
+                "chartisan/php": "^1.2.0",
+                "illuminate/console": "^7.14.1",
+                "illuminate/contracts": "^7.14.1",
+                "illuminate/http": "^7.14.1",
+                "illuminate/support": "^7.14.1",
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ConsoleTVs\\Charts\\ChartsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ConsoleTVs\\Charts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Èrik C. Forés",
+                    "email": "soc@erik.cat"
+                }
+            ],
+            "description": "The missing charting library on laravel, powered by Chartisan",
+            "funding": [
+                {
+                    "url": "https://github.com/ConsoleTVs",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/ErikCampobadal",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2020-08-27T15:24:38+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -740,6 +873,167 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "jeroennoten/laravel-adminlte",
+            "version": "v3.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
+                "reference": "496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3",
+                "reference": "496e7cb3a770fcf05e78627d1b3cb0f3e4c865f3",
+                "shasum": ""
+            },
+            "require": {
+                "almasaeed2010/adminlte": "^3.0",
+                "laravel/framework": ">=6.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": ">=4.0",
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeroenNoten\\LaravelAdminLte\\AdminLteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeroenNoten\\LaravelAdminLte\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeroen Noten",
+                    "email": "jeroennoten@me.com"
+                }
+            ],
+            "description": "Easy AdminLTE integration with Laravel",
+            "keywords": [
+                "AdminLTE",
+                "admin",
+                "administrator",
+                "laravel"
+            ],
+            "time": "2020-07-17T17:35:17+00:00"
+        },
+        {
+            "name": "laravel-enso/charts",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-enso/charts.git",
+                "reference": "0c96a398ca3028a20ad0ce47b199260b391e1d77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/0c96a398ca3028a20ad0ce47b199260b391e1d77",
+                "reference": "0c96a398ca3028a20ad0ce47b199260b391e1d77",
+                "shasum": ""
+            },
+            "require": {
+                "laravel-enso/helpers": "^2.0",
+                "laravel/framework": "^7.0",
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelEnso\\Charts\\AppServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelEnso\\Charts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Ocneanu",
+                    "email": "aocneanu@gmail.com",
+                    "homepage": "https://laravel-enso.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Server-side data builder for Chart.js, with a VueJS component for the frontend.",
+            "homepage": "https://github.com/laravel-enso/charts",
+            "keywords": [
+                "chartjs",
+                "charts",
+                "laravel",
+                "laravel-enso"
+            ],
+            "time": "2020-06-30T15:29:27+00:00"
+        },
+        {
+            "name": "laravel-enso/helpers",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-enso/helpers.git",
+                "reference": "8edbf8ff594177e7e9a0c137ff806c032fde90b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/8edbf8ff594177e7e9a0c137ff806c032fde90b4",
+                "reference": "8edbf8ff594177e7e9a0c137ff806c032fde90b4",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0",
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "EnsoException": "LaravelEnso\\Helpers\\Exceptions\\EnsoException"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelEnso\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Ocneanu",
+                    "email": "aocneanu@gmail.com",
+                    "homepage": "https://laravel-enso.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper classes dependency for Laravel Enso",
+            "homepage": "https://github.com/laravel-enso/helpers",
+            "keywords": [
+                "helpers",
+                "laravel-enso"
+            ],
+            "time": "2020-08-24T14:30:05+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4561,6 +4855,78 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "crestapps/laravel-code-generator",
+            "version": "v2.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CrestApps/laravel-code-generator.git",
+                "reference": "841422cb5768a205c4d688af8ebae45f140edce5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CrestApps/laravel-code-generator/zipball/841422cb5768a205c4d688af8ebae45f140edce5",
+                "reference": "841422cb5768a205c4d688af8ebae45f140edce5",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9||~1.0",
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^5.0||^6.0||^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CrestApps\\CodeGenerator\\CodeGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CrestApps\\CodeGenerator\\": "src/",
+                    "CrestApps\\CodeGenerator\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Majd Alhayek (Mike)",
+                    "email": "mike@crestapps.com",
+                    "homepage": "https://www.crestapps.com"
+                }
+            ],
+            "description": "An intelligent code generator for Laravel framework that will save you time! This awesome tool will help you generate resources like views, controllers, routes, migrations, languages and/or form-requests! It is extremely flexible and customizable to cover many on the use cases. It is shipped with cross-browsers compatible template, along with a client-side validation to modernize your application.",
+            "keywords": [
+                "Alhayek",
+                "CrestApps",
+                "Majd Alhayek",
+                "Mike CallCompleterFullNameAlhayek",
+                "code generator",
+                "code-generator",
+                "controller creator",
+                "crud",
+                "crud builder",
+                "crud generator",
+                "generator",
+                "generators",
+                "laravel",
+                "laravel code generator",
+                "laravel crud",
+                "laravel crud builder",
+                "laravel crud generator",
+                "laravel-code-generator",
+                "routes creator",
+                "views creator"
+            ],
+            "time": "2019-11-12T19:59:01+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.3.1",

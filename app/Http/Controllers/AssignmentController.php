@@ -63,7 +63,6 @@ class AssignmentController extends Controller
             }else{
                 throw new ModelNotFoundException;
             }
-
             return view('assignment.view', compact('assignment','submission'));
         } catch (ModelNotFoundException $e) {
             $submission = new user_Submission_Score();
