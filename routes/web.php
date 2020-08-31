@@ -64,3 +64,10 @@ Route::post('/assignment/{assignment}/submit','AssignmentController@submitAnswer
 Route::get('/profile/{user}','ProfileController@show')->name('profile.show');
 Route::get('/profile/{user}/edit','ProfileController@edit')->name('profile.edit');
 Route::post('/profile/{user}/update','ProfileController@update');
+
+/*
+ Attendance
+*/
+Route::get('/attendance', 'AttendanceController@index')->name('attendance.index'); //mentor access
+Route::post('/attendance/store', 'AttendanceController@store');
+Route::post('/attendance/date', 'AttendanceController@getDate');
