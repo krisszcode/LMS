@@ -11,15 +11,16 @@ use Illuminate\Support\Facades\Gate;
 
 class AttendanceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     function index(){
         if (Gate::allows('mentor', auth()->user())) {
             try {
                 $users = User::firstOrFail()->where('roles', 'student')->get();
                 $date = null;
-
-
-                $attendances = Attendance::all();
-                //dd($attendances);
 
                 if(sizeof($users) == 0){
                     throw new ModelNotFoundException();
@@ -27,7 +28,7 @@ class AttendanceController extends Controller
                 return view('attendance.index', compact('users','date'));
             } catch (ModelNotFoundException $e) {
                 $users = null;
-                $date = null;
+                $date = null; //temporary solution
                 return view('attendance.index', compact('users','date'));
             }
         } else{

@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class UserScoreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
 
         $scores = DB::table('assignment_pages')

@@ -11,7 +11,7 @@
                         <h1>Add New Curriculum Text Page</h1>
                     </div>
                     <div class="form-group row">
-                        <label for="title" class="col-md-4 col-form-label"> Curriculum Title</label>
+                        <label for="title" class="col-md-4 col-form-label"> Page Title</label>
 
                         <input id="title"
                                type="text"
@@ -27,7 +27,7 @@
                         @enderror
                     </div>
                     <div class="form-group row">
-                        <label for="content" class="col-md-4 col-form-label"> Curriculum Body</label>
+                        <label for="content" class="col-md-4 col-form-label"> Page Body</label>
 
                         <textarea id="content"
                                type="textarea"
@@ -42,7 +42,6 @@
                                 </span>
                         @enderror
                     </div>
-
                     <div class="row pt-4">
                         <button class="btn btn-primary">Send to Publisher</button>
                     </div>

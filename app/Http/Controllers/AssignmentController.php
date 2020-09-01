@@ -13,6 +13,11 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AssignmentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function create(User $user){
         if (Gate::allows('mentor', $user)) {
 
@@ -35,8 +40,8 @@ class AssignmentController extends Controller
 
             $data = request()->validate([
                 'title' => 'required',
-                'question' => ['required'],
-                'maxScore' => ['required']
+                'question' => 'required',
+                'maxScore' => ['required','numeric','min:2']
             ]);
 
             $assignment = new assignmentPage();

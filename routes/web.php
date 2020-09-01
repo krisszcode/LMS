@@ -29,8 +29,6 @@ Route::get('/{user}/scores','UserScoreController@index')->name('userScore.index'
 /*
  Submission(s)
 */
-
-//needs to be fixed
 Route::get('/submissions', 'SubmissionController@index')->name('submissions.index');//mentor access
 Route::post('/submission/{submission}/grade','SubmissionController@update');
 

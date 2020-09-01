@@ -99,7 +99,7 @@
                                     @endcan
                                     <a class="dropdown-item" href="/curriculum/index">
 
-                                        {{"Curriculum" }}
+                                        {{"Textpages" }}
                                     </a>
                                     <a class="dropdown-item" href="/assignment/index">
 
