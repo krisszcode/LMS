@@ -24,8 +24,8 @@
         @if($date == null)
         <label for="date">Date:</label>
             <input type="date" id="date" name="date"
-                value="{{$ldate}}"
-                min="2020-08-01" max="{{$ldate}}" class="@error('title') is-invalid @enderror">    <hr> <br>
+
+                min="2020-08-01" max="" class="@error('title') is-invalid @enderror">    <hr> <br>
                 @error('date')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,7 +44,7 @@
         @endif
     <h3>Students:</h3>
         @if($users == null)
-            <p>No users</p>
+            <p>No students</p>
             @else
 
             @foreach ($users as $user)

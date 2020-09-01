@@ -17,6 +17,6 @@ class UserScoreController extends Controller
             ->where('user__submission__scores.user_id', '=', auth()->user()->id)
             ->get();
 
-        return view('userScore.index', compact('scores','usersChart'));
+        return view('userScore.index', compact('scores'));
     }
 }

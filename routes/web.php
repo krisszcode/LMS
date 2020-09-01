@@ -29,6 +29,8 @@ Route::get('/{user}/scores','UserScoreController@index')->name('userScore.index'
 /*
  Submission(s)
 */
+
+//needs to be fixed
 Route::get('/submissions', 'SubmissionController@index')->name('submissions.index');//mentor access
 Route::post('/submission/{submission}/grade','SubmissionController@update');
 
@@ -52,7 +54,7 @@ Route::post('/textpage/{textpage}/edit', 'PageController@edit'); //mentor access
 Route::get('/assignment/create','AssignmentController@create')->name('assignment.create'); //mentor access
 Route::get('/assignment/index', 'AssignmentController@index') ->name('assignment.index');
 Route::post('/assignment','AssignmentController@store');
-Route::get('/assignment/{assignment}','AssignmentController@view')->name('assignment.view'); //mentor access
+Route::get('/assignment/{assignment}','AssignmentController@view')->name('assignment.view');
 
 Route::post('/assignment','AssignmentController@store');
 Route::post('/assignment/{assignment}/edit', 'AssignmentController@edit');

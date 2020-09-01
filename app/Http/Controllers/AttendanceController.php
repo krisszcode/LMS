@@ -15,9 +15,8 @@ class AttendanceController extends Controller
         if (Gate::allows('mentor', auth()->user())) {
             try {
                 $users = User::firstOrFail()->where('roles', 'student')->get();
-                $ldate = date('Y-m-d H:i:s');
                 $date = null;
-                $verifiedUsers = [];
+
 
                 $attendances = Attendance::all();
                 //dd($attendances);
@@ -25,10 +24,11 @@ class AttendanceController extends Controller
                 if(sizeof($users) == 0){
                     throw new ModelNotFoundException();
                 }
-                return view('attendance.index', compact('users','ldate','date','verifiedUsers'));
+                return view('attendance.index', compact('users','date'));
             } catch (ModelNotFoundException $e) {
                 $users = null;
-                return view('attendance.index', compact('users'));
+                $date = null;
+                return view('attendance.index', compact('users','date'));
             }
         } else{
             abort(403);
