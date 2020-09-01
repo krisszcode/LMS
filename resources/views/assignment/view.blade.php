@@ -35,7 +35,6 @@
             @endcan
             <h4>Max Score:</h4>
             {{$assignment->max_score}}<br>
-
         @can('student')
                 @if(((Auth::user()->id == $submission->user_id)
                 &&
@@ -68,7 +67,7 @@
                     </div>
                 @endif
             @else
-                <h4 class="pt-4 mt-4">You are already submitted an answer for this question.
+                <h4 class="pt-4 mt-4">You have submitted an answer!
                     Your score will be visible in the My Scores page.</h4>
             @endif
         @endcan

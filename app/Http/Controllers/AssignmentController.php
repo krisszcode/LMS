@@ -62,10 +62,13 @@ class AssignmentController extends Controller
     public function view($assignmentID){
         try {
             $assignment = assignmentPage::find($assignmentID);
-            $submission_array = user_Submission_Score::firstOrFail()->where('user_id', auth()->user()->getKey())->get();
-            if(sizeof($submission_array) != 0){
+            $submission_array = user_Submission_Score::firstOrFail()
+                ->where('user_id', auth()->user()->getKey())
+                ->where('assignment_id', '=',$assignmentID)
+                ->get();
+            if(sizeof($submission_array) != 0){ // found the submission for the assignment
                 $submission = $submission_array[0];
-            }else{
+            }else {
                 throw new ModelNotFoundException;
             }
             return view('assignment.view', compact('assignment','submission'));
