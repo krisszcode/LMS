@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\assignmentPage;
 use App\textPage;
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,13 +22,13 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
         $user = auth()->user();
         $textPages = textPage::latest()->paginate(3);
         $assignments = assignmentPage::latest()->paginate(3);
-        return view('users.index',compact('user','textPages','assignments'));
+        return view('users.index', compact('user', 'textPages', 'assignments'));
     }
 }

@@ -43,7 +43,6 @@
                     <a href="/curriculum/index">View More...</a>
             @endcan
         @endif
-
     </div>
     <hr>
     <div>

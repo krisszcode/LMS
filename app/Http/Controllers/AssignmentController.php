@@ -18,30 +18,29 @@ class AssignmentController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(User $user){
+    public function create(User $user)
+    {
         if (Gate::allows('mentor', $user)) {
-
-            return view('assignment.create',compact($user));
-
+            return view('assignment.create', compact($user));
         } else {
             abort(403);
-
         }
     }
 
-    public function index(){
+    public function index()
+    {
         $assignments = assignmentPage::all();
-
         return view('assignment.index', compact('assignments'));
     }
 
-    public function store(User $user){
+    public function store(User $user)
+    {
         if (Gate::allows('mentor', $user)) {
 
             $data = request()->validate([
                 'title' => 'required',
                 'question' => 'required',
-                'maxScore' => ['required','numeric','min:2']
+                'maxScore' => ['required', 'numeric', 'min:2']
             ]);
 
             $assignment = new assignmentPage();
@@ -52,42 +51,46 @@ class AssignmentController extends Controller
             $assignment->save();
 
             return redirect('/assignment/index');
-
         } else {
             abort(403);
-
         }
     }
 
-    public function view($assignmentID){
+    public function view($assignmentID)
+    {
         try {
             $assignment = assignmentPage::find($assignmentID);
             $submission_array = user_Submission_Score::firstOrFail()
                 ->where('user_id', auth()->user()->getKey())
-                ->where('assignment_id', '=',$assignmentID)
+                ->where('assignment_id', '=', $assignmentID)
                 ->get();
-            if(sizeof($submission_array) != 0){ // found the submission for the assignment
-                $submission = $submission_array[0];
-            }else {
+
+            if (sizeof($submission_array) != 0) { // found the submission for the assignment
+                $submission = $submission_array[0]; //the list will have 1 element in every case
+            } else {
                 throw new ModelNotFoundException;
             }
-            return view('assignment.view', compact('assignment','submission'));
+
+            return view('assignment.view', compact('assignment', 'submission'));
         } catch (ModelNotFoundException $e) {
             $submission = new user_Submission_Score();
             $submission->user_id = 0; //temporary solution
-            return view('assignment.view', compact('assignment','submission'));
+
+            return view('assignment.view', compact('assignment', 'submission'));
         }
     }
 
-    public function edit($assignmentID, Request $request){
+    public function edit($assignmentID, Request $request)
+    {
         $assignment = assignmentPage::find($assignmentID);
         $assignment->published = $request["state"];
         $assignment->save();
 
-        return redirect('/assignment/'.$assignmentID)->with('message', 'Successfully changed!');
+        return redirect('/assignment/' . $assignmentID)->with('message', 'Successfully changed!');
     }
 
-    public function submitAnswer(Request $request, $assignment){
+    public function submitAnswer(Request $request, $assignment)
+    {
         $data = request()->validate([
             'answer' => 'required'
         ]);

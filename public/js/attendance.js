@@ -1,12 +1,9 @@
 $("submit-date").on("click",function(){
-
     if($(".checked:checked").length == 0) {
       alert("nothing is checked");
     } else {
       alert("something is checked");
     }
-
-
   });
 
 $("#date").change(function(){
@@ -16,7 +13,6 @@ $("#date").change(function(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
         $.ajax({
             url: '/attendance/date',
             method: 'post',

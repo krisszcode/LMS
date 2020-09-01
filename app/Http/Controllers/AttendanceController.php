@@ -16,65 +16,71 @@ class AttendanceController extends Controller
         $this->middleware('auth');
     }
 
-    function index(){
+    function index()
+    {
         if (Gate::allows('mentor', auth()->user())) {
             try {
                 $users = User::firstOrFail()->where('roles', 'student')->get();
                 $date = null;
 
-                if(sizeof($users) == 0){
+                if (sizeof($users) == 0) {
                     throw new ModelNotFoundException();
                 }
-                return view('attendance.index', compact('users','date'));
+
+                return view('attendance.index', compact('users', 'date'));
             } catch (ModelNotFoundException $e) {
                 $users = null;
                 $date = null; //temporary solution
-                return view('attendance.index', compact('users','date'));
+
+                return view('attendance.index', compact('users', 'date'));
             }
-        } else{
+        } else {
             abort(403);
         }
     }
 
 
-    function store(Request $request){
-        if($request['checkbox'] != null){
+    function store(Request $request)
+    {
+        if ($request['checkbox'] != null) {
             $data = request()->validate([
-                'date' => 'required|date|before_or_equal:'. date('Y-m-d'),
+                'date' => 'required|date|before_or_equal:' . date('Y-m-d'),
                 'checkbox' => '',
             ]);
 
             $attendances = Attendance::all();
             $alreadySubmitted = false;
+
+            //decide if the student is already submitted
             foreach ($attendances as $attendance) {
-                if($attendance->created_at == date('Y-m-d') . " 00:00:00" && $attendance->user_id == $data['checkbox'] ){
+                if ($attendance->created_at == date('Y-m-d') . " 00:00:00" && $attendance->user_id == $data['checkbox']) {
                     $alreadySubmitted = true;
                 }
             }
-            if(!$alreadySubmitted){
+            if (!$alreadySubmitted) {
                 $attendance = new Attendance();
                 $attendance->date = $data['date'];
                 $attendance->user_id = $data['checkbox'];
                 $attendance->created_at = date('Y-m-d');
                 $attendance->save();
             }
-            if($alreadySubmitted){
-                return redirect()->back()->with('failedmessage','This student is already confirmed for this day!');
+            if ($alreadySubmitted) {
+                return redirect()->back()->with('failedmessage', 'This student is already confirmed for this day!');
             }
-            return redirect()->back()->with('successmessage','Attendance successfully saved!');
-        }
-        else{
-            return redirect()->back()->with('dangermessage','Please select at least one checkbox!');
+            return redirect()->back()->with('successmessage', 'Attendance successfully saved!');
+        } else {
+            return redirect()->back()->with('dangermessage', 'Please select at least one checkbox!');
         }
     }
 
-    public function getDate(Request $request){
-            $date = $request['date'];
-            $verifiedUsers = DB::table('users')
-            ->join('attendances','attendances.user_id','=','users.id')
+    public function getDate(Request $request)
+    {
+        $date = $request['date'];
+        $verifiedUsers = DB::table('users')
+            ->join('attendances', 'attendances.user_id', '=', 'users.id')
             ->select('users.name')
             ->where('attendances.created_at', '=', $date . " 00:00:00")
             ->get();
-            return response()->json($verifiedUsers);
+        return response()->json($verifiedUsers);
     }
 }

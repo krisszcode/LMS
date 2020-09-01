@@ -11,7 +11,6 @@
                 </ul>
             </div>
         @endif
-
         @if(session()->has('successmessage'))
         <div class="alert alert-success">{{session()->get('successmessage')}}</div>
         @elseif(session()->has('dangermessage'))
@@ -46,7 +45,6 @@
         @if($users == null)
             <p>No students</p>
             @else
-
             @foreach ($users as $user)
                 {{$user->name}} <input type="checkbox" id="checkbox" value="{{$user->id}}" name="checkbox"><br>
             @endforeach

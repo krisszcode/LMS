@@ -14,11 +14,11 @@ class UserScoreController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
-
+    public function index()
+    {
         $scores = DB::table('assignment_pages')
             ->join('user__submission__scores', 'assignment_pages.id', '=', 'user__submission__scores.assignment_id')
-            ->select('assignment_pages.title','assignment_pages.max_score','user__submission__scores.*')
+            ->select('assignment_pages.title', 'assignment_pages.max_score', 'user__submission__scores.*')
             ->where('user__submission__scores.user_id', '=', auth()->user()->id)
             ->get();
 

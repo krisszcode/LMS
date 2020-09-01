@@ -50,7 +50,6 @@
                                 </span>
                             @enderror
                         </div>
-
                         <div class="form-group row">
                             <label for="maxScore" class="col-md-4 col-form-label">Max score</label>
 
@@ -65,7 +64,6 @@
                                 </span>
                             @enderror
                         </div>
-
                         <div class="row pt-4">
                             <button class="btn btn-primary">Send to Publisher</button>
                         </div>

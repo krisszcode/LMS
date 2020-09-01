@@ -2,13 +2,11 @@
 
 @section('content')
     <div class="container">
-
         @can('ownProfile',$user)
         <a class="btn btn-primary float-right" href="/profile/{{$user->id}}/edit">
             Edit Profile
         </a>
         @endcan
-
         <div class="row align-items-center">
             <div class="float-left">
                 <h1 class="pb-2">Profile</h1>

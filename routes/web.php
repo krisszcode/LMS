@@ -36,15 +36,15 @@ Route::post('/submission/{submission}/grade','SubmissionController@update');
 /*
  Curriculum
 */
-Route::get('/curriculum/create','PageController@create')->name('curriculum.create'); //mentor access
-Route::get('/curriculum/index', 'PageController@index') ->name('curriculum.index');
-Route::post('/curriculum','PageController@store');
+Route::get('/curriculum/create','TextPageController@create')->name('curriculum.create'); //mentor access
+Route::get('/curriculum/index', 'TextPageController@index') ->name('curriculum.index');
+Route::post('/curriculum','TextPageController@store');
 
 /*
  Text page
 */
-Route::get('/textpage/{textpage}','PageController@view')->name('curriculum.view'); //mentor access
-Route::post('/textpage/{textpage}/edit', 'PageController@edit'); //mentor access
+Route::get('/textpage/{textpage}','TextPageController@view')->name('curriculum.view'); //mentor access
+Route::post('/textpage/{textpage}/edit', 'TextPageController@edit'); //mentor access
 
 /*
  Assignment

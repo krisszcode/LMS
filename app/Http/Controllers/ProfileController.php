@@ -9,26 +9,27 @@ use Illuminate\Support\Facades\Gate;
 use function Sodium\compare;
 
 
-
 class ProfileController extends Controller
 {
-    public function show(User $user){
+    public function show(User $user)
+    {
         return view('profile.show', compact('user'));
     }
 
-    public function edit(User $user){
-
+    public function edit(User $user)
+    {
         if (Gate::allows('ownProfile', $user)) {
 
-            $roles = ['mentor','student']; // contains the roles of the CC
+            $roles = ['mentor', 'student']; // contains the roles of the CC
 
-            return view('profile.edit', compact('user','roles'));
+            return view('profile.edit', compact('user', 'roles'));
         } else {
             abort(403);
         }
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $data = request()->validate([
             'name' => 'required',
             'roles' => ''
